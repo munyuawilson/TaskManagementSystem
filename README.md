@@ -1,66 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+**Laravel and Vue.js Interview Exercise**
+Project Title: Simple Task Management System
+Overview:
+Create a simple Task Management System that allows users to create, view, update, delete,
+and mark tasks as completed. The backend will be an API built with Laravel, and the
+frontend will be a Vue.js application that interacts with the API.
+Requirements:
+1. Laravel Backend:
+o Task Entity:
+ A task should have the following attributes:
+ id (auto-incremented)
+ title (string, required)
+ description (text, optional)
+ is_completed (boolean, default: false)
+ created_at (timestamp)
+ updated_at (timestamp)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+o API Endpoints:
+ GET /api/v1/tasks: Retrieve a list of all tasks.
+ GET /api/v1/tasks/{id}: Retrieve a specific task by ID.
+ POST /api/v1/tasks: Create a new task.
+ PUT /api/v1/tasks/{id}: Update an existing task by ID.
+ PATCH /api/v1/tasks/{id}/complete: Mark a task as completed.
+ DELETE /api/v1/tasks/{id}: Delete a task by ID.
+o API Resources:
+ Use Laravel's API Resources to format the JSON response for tasks.
+o API Versioning:
+ Implement API versioning, prefixing all routes with /v1/.
+o Testing:
+ Write PHP Unit or Pest tests to test the API endpoints, including
+marking a task as completed (TDD approach).
 
-## About Laravel
+2. Vue.js Frontend:
+o Task Management Interface:
+ Task List: Display a list of tasks fetched from the API.
+ Task Details: View detailed information of a task.
+ Create Task Form: A form to create a new task.
+ Edit Task Form: A form to update an existing task.
+ Mark Task as Completed: Provide a way to mark a task as
+completed.
+ Delete Task: Ability to delete a task.
+o HTTP Requests:
+ Use Axios (or Fetch API) to send HTTP requests to the Laravel API.
+ Display loading indicators and handle errors gracefully.
+o UI/UX:
+ Keep the UI simple, with a clear separation of the list, create, edit,
+view, and complete sections.
+ Use Bootstrap or any TailwindCSS framework for basic styling.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Deliverables:
+1. Laravel:
+o A fully functional API with all the specified endpoints.
+o Tests written in PHP Unit or Pest, ensuring coverage for all endpoints,
+including task completion.
+o A Postman collection (optional) to demonstrate the working API.
+2. Vue.js:
+o A simple yet functional interface that interacts with the Laravel API.
+o The application should be easily testable by running npm run serve.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Evaluation Criteria:
+ Laravel:
+o Correct implementation of API routes and versioning.
+o Proper use of API Resources for JSON responses.
+o Coverage and correctness of unit tests.
+o Code organization and adherence to best practices (MVC).
+ Vue.js:
+o Proper use of Vue.js components and lifecycle methods.
+o Correct and efficient handling of HTTP requests.
+o Clean and intuitive UI design.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Bonus (Optional):
+ Implement a search functionality on the task list.
+ Add pagination to the task list.
