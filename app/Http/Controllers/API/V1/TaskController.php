@@ -9,9 +9,22 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index(Request $request)
+        
     {
-        return TaskResource::collection(Task::all());
+
+        $query = Task::query();
+
+        // search
+        if ($request->has('search')) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+    
+        // Pagination
+        $tasks = $query->paginate(10);
+    
+        
+        return TaskResource::collection($tasks);
     }
 
     public function show($id)
