@@ -57,7 +57,6 @@
 <script>
 import axios from 'axios';
 
-// Set base URL for Axios (Adjust this if your API runs on a different port)
 axios.defaults.baseURL = 'http://localhost:8000/api/v1';
 
 export default {
